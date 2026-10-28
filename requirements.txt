@@ -1,0 +1,12 @@
+streamlit
+langgraph
+langchain-core
+langchain-google-genai
+langsmith
+chromadb
+sentence-transformers
+rank-bm25
+tenacity
+python-dotenv
+pypdf
+pydantic
