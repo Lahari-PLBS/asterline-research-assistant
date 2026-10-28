@@ -53,7 +53,8 @@ intent:
 - memory_request: the user ONLY asks you to remember, correct, forget or show what you remember about THEM, with no company question inside.
 - small_talk: greetings, thanks, or anything unrelated to Asterline.
 
-search_query: for a company_question, rewrite the newest message as a complete standalone search query. Resolve words like 'it', 'that plan' or 'and for Team?' using the earlier chat. Keep exact names and numbers (for example INC-2025-12). For the other intents, just repeat the message.'''
+search_query: for a company_question, rewrite the newest message as a complete standalone search query. Resolve words like 'it', 'that plan' or 'and for Team?' using the earlier chat. Keep exact names and numbers (for example INC-2025-12). For the other intents, just repeat the message.
+Always include the subject of the previous question in search_query (for example the metric and the plan names).'''
 
 
 def router_agent(state):
@@ -96,7 +97,9 @@ Rules:
 3. A newer, specific document beats an older one. A general overview does NOT override a specific policy.
 4. Old release notes describe the past. Use them as current evidence only if the question asks about that time.
 5. Do not mix up similar things (ingestion limits are per project, query concurrency limits are per workspace, and one incident is not another).
-6. If the chunks do not contain the specific fact asked, set fact_found to false. Still list in use_chunk_ids any chunk that explains the situation (for example, a price that is not published and must be requested from sales).'''
+6. If the chunks do not contain the specific fact asked, set fact_found to false. Still list in use_chunk_ids any chunk that explains the situation (for example, a price that is not published and must be requested from sales).
+7. If the documents only say that a fact is unpublished, unannounced or must be requested from someone, the specific fact was NOT found: set fact_found to false.
+8. When one chunk says it supersedes or replaces another, or a later dated document covers the same topic more specifically, the newer chunk is current and the other is outdated.'''
 
 
 def analyst_agent(state):
@@ -221,7 +224,9 @@ DELETE (action delete, with the memory id) when the user asks you to forget some
 
 NEVER save: passwords, API keys, tokens, emails, phone numbers, health or other private personal details, customer data, one-off questions, or company facts (those come from the documents, not from memory).
 Do not save duplicates. Write each note in third person, under 150 characters.
-If nothing should change, return an empty list.'''
+If nothing should change, return an empty list.
+
+Example: existing memory id=2 'Prefers short answers'; the user says 'actually I prefer detailed answers' -> one update action on id 2, not a new add.'''
 
 
 def memory_agent(state):

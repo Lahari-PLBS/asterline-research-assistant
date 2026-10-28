@@ -1,0 +1,79 @@
+{
+  "summary": {
+    "research_pass_pct": 0,
+    "citation_pct": 100,
+    "missing_info_pct": 0,
+    "cat_lookup": 0,
+    "memory_pass_pct": 0,
+    "leaks": 0
+  },
+  "research": [
+    {
+      "id": "L1",
+      "category": "lookup",
+      "question": "How much does the Launch plan cost per month?",
+      "answer": "The Launch plan costs $59 per month and includes 4 seats and 1 million run records per month.",
+      "status": "answered",
+      "cited": [
+        "pricing:0"
+      ],
+      "checks": {
+        "status": false,
+        "citation": true,
+        "contains": true
+      },
+      "passed": false
+    },
+    {
+      "id": "L2",
+      "category": "lookup",
+      "question": "What is the maximum number of run records in one POST /v2/runs request?",
+      "answer": "The maximum number of run records in one POST /v2/runs request is 400, or 1 MB, whichever limit is reached first.",
+      "status": "answered",
+      "cited": [
+        "ingest:0"
+      ],
+      "checks": {
+        "status": false,
+        "citation": true,
+        "contains": true
+      },
+      "passed": false
+    },
+    {
+      "id": "L3",
+      "category": "lookup",
+      "question": "How long does the Team plan retain searchable run records?",
+      "answer": "The Team plan retains searchable run records for 180 days [pricing:1]. The overage rate for the Team plan is $0.70 per 10,000 records [pricing:1]. Extra Team seats cost $16 per seat per month [pricing:1].",
+      "status": "answered",
+      "cited": [
+        "pricing:1",
+        "pricing:1",
+        "pricing:1"
+      ],
+      "checks": {
+        "status": false,
+        "citation": true,
+        "contains": true
+      },
+      "passed": false
+    },
+    {
+      "id": "L4",
+      "category": "lookup",
+      "question": "Which alert destinations does Signals support?",
+      "answer": "Signals supports email, Slack, webhook, and PagerDuty alert destinations.",
+      "status": "answered",
+      "cited": [
+        "alerts:1"
+      ],
+      "checks": {
+        "status": false,
+        "citation": true,
+        "contains": true
+      },
+      "passed": false
+    }
+  ],
+  "memory": []
+}
