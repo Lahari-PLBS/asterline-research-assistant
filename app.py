@@ -159,7 +159,7 @@ def chat_page(user_id):
         st.session_state.messages.append({'role': 'user', 'content': question})
 
         with st.chat_message('assistant'):
-            with st.spinner('Searching the documentation...'):
+            with st.spinner('Processing the Request...'):
                 try:
                     result = answer_question(user_id, st.session_state.session_id, question, history)
                     reply = {
