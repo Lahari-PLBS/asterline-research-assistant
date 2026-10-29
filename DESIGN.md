@@ -32,7 +32,7 @@ flowchart TD
 | Memory manager | Adds, updates or deletes user memory under strict rules |
 
 ## Information flow
-(A question enters the router, goes through retrieval, analysis, writing and verification, then the memory manager runs. Mention that memory is passed to the router and writer as context only.)
+(A question enters the router, goes through retrieval, analysis, writing and verification, then the memory manager runs, that memory is passed to the router and writer as context only.)
 
 ## Memory approach
 - **Stored:** preferences, ongoing topics, user-stated claims (labelled unverified).

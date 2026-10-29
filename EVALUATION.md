@@ -14,12 +14,23 @@
 ```
 
 ## How to reproduce
-`python evaluate.py before`, then `python compare.py before after`. Cases are in eval_cases.py. Checks are rule-based.
+`python evaluate.py before` & `python evaluate.py after`, then `python compare.py before after`. Cases are in eval_cases.py. Checks are rule-based.
+
+## Results
+| Metric | Before | After |
+|---|---|---|
+| Research pass rate | (4%) | (4%) |
+| Citation hit rate | 82 | 86 |
+| Conflict cases | 0 of 5 | 0 of 5 |
+| Missing-info accuracy | 25 | 25 |
+| Follow-ups | 0 of 2 | 0 of 2|
+| Memory tests passed | ( 7 of 7) | 7 of 7 |
+| Leaks | 0 | 0 |
 
 ## Improvement
 I have changed:
 1.  in ANALYST_PROMPT in agents.py, added this as rule 7: 7. If the documents only say that a fact is unpublished, unannounced or must be requested from someone, the specific fact was NOT found: set fact_found to false.
-2. n ANALYST_PROMPT, added: 8. When one chunk says it supersedes or replaces another, or a later dated document covers the same topic more specifically, the newer chunk is current and the other is outdated.
+2. in ANALYST_PROMPT, added: 8. When one chunk says it supersedes or replaces another, or a later dated document covers the same topic more specifically, the newer chunk is current and the other is outdated.
 3. in ROUTER_PROMPT, added: Always include the subject of the previous question in search_query (for example the metric and the plan names).
 4.  in MEMORY_PROMPT, added a short worked example, for instance: Example: existing memory id=2 'Prefers short answers'; the user says 'actually I prefer detailed answers' -> one update action on id 2, not a new add.
 
