@@ -20,7 +20,8 @@ def get_llm(provider, model):
     if provider == 'ollama':
         from langchain_ollama import ChatOllama
         # num_ctx = how much text the model can read at once (the default is too small for our prompts)
-        return ChatOllama(model=model, temperature=0, num_ctx=8192)
+        # return ChatOllama(model=model, temperature=0, num_ctx=8192)
+        return ChatOllama(model=model, temperature=0, num_ctx=8192, client_kwargs={'timeout': 300})
     if provider == 'openai':
         from langchain_openai import ChatOpenAI
         return ChatOpenAI(model=model, temperature=0)

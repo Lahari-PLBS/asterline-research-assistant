@@ -1,0 +1,483 @@
+{
+  "summary": {
+    "research_pass_pct": 4,
+    "citation_pct": 86,
+    "missing_info_pct": 25,
+    "cat_conflict": 0,
+    "cat_distractor": 0,
+    "cat_followup": 0,
+    "cat_lookup": 0,
+    "cat_missing": 25,
+    "cat_multihop": 0,
+    "memory_pass_pct": 100,
+    "leaks": 0
+  },
+  "research": [
+    {
+      "id": "L1",
+      "category": "lookup",
+      "question": "How much does the Launch plan cost per month?",
+      "answer": "The Launch plan costs $59 per month, and it includes 4 seats and 1 million run records per month. An older document says it retains searchable run records for 21 days, but it was superseded by [pricing:2] which does not mention retention periods. Additionally, an older document says run-record overage is $1.20 per 10,000 records, but it was superseded by [pricing:2] which does not mention overage rates. For more information on pricing and features, please refer to [pricing:0] and [pricing:2].",
+      "status": "answered",
+      "cited": [
+        "pricing:0",
+        "pricing:1",
+        "pricing:2"
+      ],
+      "checks": {
+        "status": false,
+        "citation": true,
+        "contains": true
+      },
+      "passed": false
+    },
+    {
+      "id": "L2",
+      "category": "lookup",
+      "question": "What is the maximum number of run records in one POST /v2/runs request?",
+      "answer": "The maximum number of run records in one POST /v2/runs request is 400, or 1 MB, whichever limit is reached first.",
+      "status": "answered",
+      "cited": [
+        "ingest:0"
+      ],
+      "checks": {
+        "status": false,
+        "citation": true,
+        "contains": true
+      },
+      "passed": false
+    },
+    {
+      "id": "L3",
+      "category": "lookup",
+      "question": "How long does the Team plan retain searchable run records?",
+      "answer": "The Team plan retains searchable run records for 180 days.",
+      "status": "answered",
+      "cited": [
+        "pricing:1"
+      ],
+      "checks": {
+        "status": false,
+        "citation": true,
+        "contains": true
+      },
+      "passed": false
+    },
+    {
+      "id": "L4",
+      "category": "lookup",
+      "question": "Which alert destinations does Signals support?",
+      "answer": "Signals supports the following alert destinations: email, Slack, webhook, and PagerDuty. [alerts:1]",
+      "status": "answered",
+      "cited": [
+        "alerts:1"
+      ],
+      "checks": {
+        "status": false,
+        "citation": true,
+        "contains": true
+      },
+      "passed": false
+    },
+    {
+      "id": "L5",
+      "category": "lookup",
+      "question": "How many complete days of history does seasonal anomaly alerting need?",
+      "answer": "21 complete days of history",
+      "status": "answered",
+      "cited": [
+        "alerts:0",
+        "onboarding:1",
+        "incident-03:2"
+      ],
+      "checks": {
+        "status": false,
+        "citation": true,
+        "contains": true
+      },
+      "passed": false
+    },
+    {
+      "id": "L6",
+      "category": "lookup",
+      "question": "At what error rate does a canary deployment roll back automatically?",
+      "answer": "The canary deployment rolls back automatically if the error rate exceeds 0.8% or p95 latency exceeds 900 milliseconds during a canary stage.",
+      "status": "answered",
+      "cited": [
+        "deploy:1"
+      ],
+      "checks": {
+        "status": false,
+        "citation": true,
+        "contains": true
+      },
+      "passed": false
+    },
+    {
+      "id": "L7",
+      "category": "lookup",
+      "question": "What is the contractual monthly uptime SLA for Enterprise?",
+      "answer": "The contractual monthly uptime SLA for Enterprise is 99.92%.",
+      "status": "answered",
+      "cited": [
+        "sla:0"
+      ],
+      "checks": {
+        "status": false,
+        "citation": true,
+        "contains": true
+      },
+      "passed": false
+    },
+    {
+      "id": "C1",
+      "category": "conflict",
+      "question": "How long is cold recovery storage kept after the searchable retention period ends?",
+      "answer": "The documentation does not contain the requested fact about how long cold recovery storage is kept after the searchable retention period ends. However, it does contain related information. According to retention:0, raw run records are held in cold recovery storage for 20 days after their plan-specific searchable retention period ends, then permanently deleted. This policy supersedes the earlier 60-day cold-storage period mentioned in security:1. For more information on searchable retention periods, see retention:0. For more information on Run Explorer timeline retention, see traces:1.",
+      "status": "answered",
+      "cited": [
+        "retention:0",
+        "security:1",
+        "traces:1"
+      ],
+      "checks": {
+        "status": false,
+        "citation": true,
+        "contains": true
+      },
+      "passed": false
+    },
+    {
+      "id": "C2",
+      "category": "conflict",
+      "question": "What is the weekly on-call stipend?",
+      "answer": "The weekly on-call stipend is $175, effective 2026-01-01, replacing the previous stipend of $140.",
+      "status": "answered",
+      "cited": [
+        "handbook:1"
+      ],
+      "checks": {
+        "status": false,
+        "citation": true,
+        "contains": true
+      },
+      "passed": false
+    },
+    {
+      "id": "C3",
+      "category": "conflict",
+      "question": "What is the current Launch ingestion rate limit per project?",
+      "answer": "The current Launch ingestion rate limit per project is 300 requests per second.",
+      "status": "answered",
+      "cited": [
+        "ingest:1"
+      ],
+      "checks": {
+        "status": false,
+        "citation": true,
+        "contains": true
+      },
+      "passed": false
+    },
+    {
+      "id": "C4",
+      "category": "conflict",
+      "question": "What is the AQL query timeout in the current version?",
+      "answer": "The AQL query timeout in the current version is 50 seconds.",
+      "status": "answered",
+      "cited": [
+        "query:0",
+        "release-23:0"
+      ],
+      "checks": {
+        "status": false,
+        "citation": true,
+        "contains": true
+      },
+      "passed": false
+    },
+    {
+      "id": "C5",
+      "category": "conflict",
+      "question": "What was the Launch ingestion rate limit in version 2.0?",
+      "answer": "The Launch ingestion rate limit in version 2.0 was 180 requests per second per project, but it was increased to 300 requests per second per project in version 2.1 [release-21:0].",
+      "status": "answered",
+      "cited": [
+        "release-20:0",
+        "release-21:0"
+      ],
+      "checks": {
+        "status": false,
+        "citation": true,
+        "contains": true
+      },
+      "passed": false
+    },
+    {
+      "id": "M1",
+      "category": "multihop",
+      "question": "Which plan can export to Redshift, and in which version did that start?",
+      "answer": "The Enterprise plan can export to Redshift, and this feature was introduced in version 2.2. However, the exact plan that supports Redshift export is not explicitly stated in the provided evidence. The Warehouse Export specification [export:0] mentions that Enterprise supports Redshift, but it does not provide information on when this feature was introduced. The release notes for version 2.2 [release-22:0] only mention the addition of Redshift Warehouse Export for Enterprise, but do not specify the plan that supports this feature. Therefore, the answer only confirms that Redshift export is available in version 2.2, but does not provide information on the specific plan that supports this feature.",
+      "status": "answered",
+      "cited": [
+        "export:0",
+        "release-22:0"
+      ],
+      "checks": {
+        "status": false,
+        "citation": true,
+        "contains": true
+      },
+      "passed": false
+    },
+    {
+      "id": "M2",
+      "category": "multihop",
+      "question": "Can a Launch workspace create an EU project?",
+      "answer": "No, a Launch workspace cannot create an EU project. According to the pricing chunk [pricing:2], Launch supports only US projects. However, Team and Enterprise plans can create EU projects.",
+      "status": "answered",
+      "cited": [
+        "pricing:2"
+      ],
+      "checks": {
+        "status": false,
+        "citation": true,
+        "contains": true
+      },
+      "passed": false
+    },
+    {
+      "id": "M3",
+      "category": "multihop",
+      "question": "I need Run Explorer timelines kept for 45 days. Which plan do I need?",
+      "answer": "To keep Run Explorer timelines for 45 days, you need the Enterprise plan.",
+      "status": "answered",
+      "cited": [
+        "traces:1",
+        "release-22:1",
+        "retention:2"
+      ],
+      "checks": {
+        "status": false,
+        "citation": true,
+        "contains": true
+      },
+      "passed": false
+    },
+    {
+      "id": "M4",
+      "category": "multihop",
+      "question": "A Team customer wants an EU project and Redshift export. What is possible?",
+      "answer": "A Team customer can create an EU project, but exporting to Redshift is not possible. EU projects are available on Team starting with version 2.1, but Redshift support began in version 2.2, which is not available on Team. Team warehouse destinations are BigQuery and Snowflake, not Redshift.",
+      "status": "answered",
+      "cited": [
+        "regions:0",
+        "export:0",
+        "release-22:0"
+      ],
+      "checks": {
+        "status": false,
+        "citation": true,
+        "contains": true
+      },
+      "passed": false
+    },
+    {
+      "id": "D1",
+      "category": "distractor",
+      "question": "Does Run Explorer record what users see on their screens?",
+      "answer": "No, Run Explorer does not record what users see on their screens. It displays the ordered attempts and status transitions for a workflow run, but does not capture screens or DOM content.",
+      "status": "answered",
+      "cited": [
+        "faq:0",
+        "traces:0"
+      ],
+      "checks": {
+        "status": false,
+        "citation": true
+      },
+      "passed": false
+    },
+    {
+      "id": "D2",
+      "category": "distractor",
+      "question": "What is the query concurrency limit per workspace on Team?",
+      "answer": "The query concurrency limit per workspace on Team is 30.",
+      "status": "answered",
+      "cited": [
+        "ingest:1"
+      ],
+      "checks": {
+        "status": false,
+        "citation": false,
+        "contains": true
+      },
+      "passed": false
+    },
+    {
+      "id": "D3",
+      "category": "distractor",
+      "question": "Was the Warehouse Export duplicate-row problem caused by INC-2025-08?",
+      "answer": "No",
+      "status": "answered",
+      "cited": [
+        "incident-12:0",
+        "export:1"
+      ],
+      "checks": {
+        "status": false,
+        "citation": false,
+        "contains": false
+      },
+      "passed": false
+    },
+    {
+      "id": "D4",
+      "category": "distractor",
+      "question": "How many customers did INC-2025-12 affect?",
+      "answer": "29",
+      "status": "answered",
+      "cited": [
+        "incident-12:0",
+        "incident-12:2"
+      ],
+      "checks": {
+        "status": false,
+        "citation": true,
+        "contains": true
+      },
+      "passed": false
+    },
+    {
+      "id": "X1",
+      "category": "missing",
+      "question": "What is the monthly list price of the Enterprise plan?",
+      "answer": "The monthly list price of the Enterprise plan is NOT FOUND. The documentation does not contain the requested fact. However, it is mentioned that Enterprise pricing is negotiated, and no list price is published. For more information on pricing, please refer to the Plans and billing section.",
+      "status": "not_found",
+      "cited": [
+        "pricing:0"
+      ],
+      "checks": {
+        "status": true
+      },
+      "passed": true
+    },
+    {
+      "id": "X2",
+      "category": "missing",
+      "question": "On what date will the Asia-Pacific region launch?",
+      "answer": "The Asia-Pacific region launch date has not been announced.",
+      "status": "answered",
+      "cited": [
+        "faq:1"
+      ],
+      "checks": {
+        "status": false
+      },
+      "passed": false
+    },
+    {
+      "id": "X3",
+      "category": "missing",
+      "question": "Who is the CEO of Asterline Labs?",
+      "answer": "The documentation does not contain the requested fact about the CEO of Asterline Labs.",
+      "status": "answered",
+      "cited": [
+        "company:0"
+      ],
+      "checks": {
+        "status": false
+      },
+      "passed": false
+    },
+    {
+      "id": "X4",
+      "category": "missing",
+      "question": "Is Asterline HIPAA certified?",
+      "answer": "The documentation does not contain a direct statement about HIPAA certification. However, it does mention data encryption with AES-256 at rest and TLS 1.2 or later in transit [security:0]. For more information on data security, refer to the security overview [security:0].",
+      "status": "answered",
+      "cited": [
+        "security:0"
+      ],
+      "checks": {
+        "status": false
+      },
+      "passed": false
+    },
+    {
+      "id": "F1",
+      "category": "followup",
+      "question": "And Team?",
+      "answer": "Hi! I answer questions about Asterline from its documentation: pricing, products, policies, releases and incidents. I can also remember your preferences between conversations. What would you like to know?",
+      "status": "small_talk",
+      "cited": [],
+      "checks": {
+        "status": false,
+        "citation": false,
+        "contains": false
+      },
+      "passed": false
+    },
+    {
+      "id": "F2",
+      "category": "followup",
+      "question": "And on Enterprise?",
+      "answer": "The ingestion rate limit for Enterprise is 6000 requests per second as of version 2.3. This is a higher limit than the 300 requests per second per project limit in version 2.0.",
+      "status": "answered",
+      "cited": [
+        "ingest:1",
+        "release-20:0"
+      ],
+      "checks": {
+        "status": false,
+        "citation": true,
+        "contains": true
+      },
+      "passed": false
+    }
+  ],
+  "memory": [
+    {
+      "id": "M1",
+      "name": "Saves a stated preference",
+      "passed": true,
+      "detail": "['prefers short answers']"
+    },
+    {
+      "id": "M2",
+      "name": "Memory survives a fresh process (restart)",
+      "passed": true,
+      "detail": "rows seen by new process: 1"
+    },
+    {
+      "id": "M3",
+      "name": "Correction replaces the old preference",
+      "passed": true,
+      "detail": "['prefers detailed answers with examples']"
+    },
+    {
+      "id": "M4",
+      "name": "Forget request deletes the note",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "id": "M5",
+      "name": "Secret is redacted and never stored",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "id": "M6",
+      "name": "User claim is not treated as a company fact",
+      "passed": true,
+      "detail": "6 alert rules per project on the Launch plan"
+    },
+    {
+      "id": "M7",
+      "name": "No memory leaks between users",
+      "passed": true,
+      "detail": "I do not have anything stored about you yet."
+    }
+  ]
+}

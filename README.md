@@ -50,7 +50,7 @@ Project name: asterline-assistant. Representative runs: (table of links from Ste
 | Conflict | (https://apac.smith.langchain.com/public/871624f7-7002-4640-8eda-b34a397722fd/r/01a1834c-009a-76ea-b49b-55288e45091b?start_time=2026-10-28T16%3A15%3A58.61756Z) | Analyst marks security:1 as outdated and picks retention:0 |
 | Not found | (https://apac.smith.langchain.com/public/871624f7-7002-4640-8eda-b34a397722fd/r/01a1834c-009a-76ea-b49b-55288e45091b?start_time=2026-10-28T16%3A15%3A58.61756Z) | `fact_found = false`, honest answer |
 | Memory | (https://apac.smith.langchain.com/public/9940dcea-1014-43c3-811a-180dab2bd49a/r/01a18358-a8d0-72af-a62d-fb66bcbb288f?start_time=2026-10-28T16%3A29%3A48.112977Z) | Memory manager updates and deletes rows |
-| Difficult or failed | (paste) | What went wrong and in which agent |
+| Difficult or failed | () | What went wrong and in which agent |
 ```
 
 ## Documents
